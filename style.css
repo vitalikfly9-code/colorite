@@ -1,0 +1,152 @@
+/* ==========================================================
+   Кольорова схема сайту
+   Задання кольорів у трьох форматах: HEX, RGB, HSL
+   ========================================================== */
+:root {
+  --bg: #FFF8E7;                 /* HEX  — фон сторінки */
+  --heading: rgb(31, 78, 121);   /* RGB  — заголовки */
+  --text: hsl(0, 0%, 20%);       /* HSL  — основний текст */
+  --border: hsl(14, 85%, 55%);   /* HSL  — кольорові рамки */
+  --button: #1F7A6F;             /* HEX  — кнопки */
+  --button-text: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);   /* фон має один колір */
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--heading);
+}
+
+/* ---------- Шапка і навігація ---------- */
+.site-header {
+  border-bottom: 4px solid var(--border);
+  background: #FFFFFF;
+}
+
+.site-header nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-header a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.site-header a.active,
+.site-header a:hover {
+  background: var(--border);
+  color: #FFFFFF;
+}
+
+/* ---------- Контейнер і картки ---------- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 3px solid var(--border);   /* кольорова рамка */
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+/* ---------- Таблиця форматів кольорів ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+th {
+  color: var(--heading);
+}
+
+/* ---------- Кнопки ---------- */
+.button {
+  display: inline-block;
+  background: var(--button);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 4px 8px 4px 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--heading);
+}
+
+/* ---------- Сторінка «Психологія кольору» ---------- */
+/* Кожен блок: фон і текст — один колірний тон (--h), різні відтінки */
+.color-block {
+  background: hsl(var(--h) 90% 94%);
+  color: hsl(var(--h) 85% 20%);
+  border-left: 10px solid hsl(var(--h) 80% 42%);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.color-block h2 {
+  color: hsl(var(--h) 85% 20%);
+  margin-top: 0;
+}
+
+.color-block .swatch {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: hsl(var(--h) 80% 42%);
+  color: #FFFFFF;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .card, .color-block {
+    padding: 16px;
+  }
+  th, td {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+}
